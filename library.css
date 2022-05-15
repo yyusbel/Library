@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+body {
+    margin: 0;
+}
+nav {
+    background-color: rgb(13, 236, 117);
+    height: 50px;
+    margin: 0;
+    padding: 10px 0;
+}
+nav > h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: rgb(207, 244, 220);
+    padding-left: 100px;
+}
+.main {
+    min-height: calc(100vh - 70px);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr;
+}
+.bookapp {
+    background-color: rgb(9, 79, 19);
+}
+.bookapp form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form > input:not([type="button"]) {
+    margin: 10px;
+    background-color: rgb(207, 245, 220);
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 5px;
+    border: solid 3px rgb(207, 244, 220);
+    border-radius: 5px;
+}
+form > input[type="button"] {
+    margin: 20px 0;
+    background-color: rgb(45, 107, 67);
+    border: none;
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: solid 3px rgb(207, 244, 220);
+}
+form > input[type="button"]:active {
+    background-color: rgb(207, 244, 220);
+}
+form > input[type="button"].not-read {
+    background-color:  rgb(241, 98, 98);
+    border: solid 3px rgb(207, 244, 220);
+}
+form > input[type="button"].read {
+    border: solid 3px rgb(207, 244, 220);
+}
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 330px);
+    grid-template-rows: 300px;
+    grid-auto-rows: 300px;
+    background-color: rgb(207, 244, 220);
+}
+.content > .card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    background-color: rgb(207, 244, 220);
+    margin: 10px;
+    border-radius: 20px;
+}
+.content > .card > .title {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.content > .card > .author {
+    margin-bottom: 0;
+}
+.content > .card > input {
+    background-color: rgb(207, 244, 220);
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: solid 3px rgb(9, 79, 19);
+    width: 200px;
+}
+.content > .card > input:active {
+    background-color: rgb(207, 244, 220);
+}
+.content > .card > input[value="Read"].read {
+    margin-top: auto;
+    border: solid 3px rgb(53, 219, 53);
+}
+.content > .card > input[value="Read"]:not(.read) {
+    margin-top: auto;
+    border: solid 3px rgb(241, 98, 98);
+}
+.content > .card > input[value="Remove"] {
+    margin: 10px 0;
+}
