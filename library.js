@@ -20,7 +20,7 @@ addBtn.addEventListener("click", (e) => {
     let read = readBtn.getAttribute("class") === "read";
     let book = new Book(title.value, author.value, pages.value, read)
     library.push(book);
-    
+
     content.innerHTML = "";
     for (let i = 0; i < library.length; i++) {
         let card = createCard(library[i].title, library[i].author, library[i].pages, library[i].read);
@@ -75,11 +75,13 @@ readBtn.addEventListener("click", (e) => {
 
 
 
-function Book(title, author, pages, read) {
-    this.title = title,
-    this.author = author, 
-    this.pages = pages,
-    this.read = read
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title,
+            this.author = author,
+            this.pages = pages,
+            this.read = read;
+    }
 }
 // a function that creates html elements
 function createCard(name, author, pages, read) {
@@ -93,3 +95,6 @@ function createCard(name, author, pages, read) {
     }
     return card;
 }
+
+
+
